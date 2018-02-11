@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import NodeNavigator from "./NodeNavigator.js";
-let d3 = require("d3");
+// let d3 = require("d3");
 const cat = "categorical";
 class Visualization extends Component {
 

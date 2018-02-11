@@ -15,8 +15,8 @@ html, body {
   padding: 0px;
   margin: 0px;
 }
-i {
-  padding: 1em;
+a:link {
+  text-decoration: none;
 }
 
 .container > div:nth-child(1n) {
@@ -65,10 +65,73 @@ i {
   /*align-self: center;*/
 }
 .container > .content > .visualization {
-  
+
+}
+#root > div > div.footer > svg {
+  margin: 1em;
 }
 .container > .footer {
   justify-content: flex-end;
   font-size: 1em;
   padding: 1em;
 }
+
+
+/* Modal Styling */
+.modalDialog {
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+  }
+
+  .modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    /*border-radius: 10px;*/
+    background: rgba(0,0,0,0.3);
+    color: white;
+/*    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);*/
+  }
+
+  .close {
+    background: #000;
+    background: rgba(0,0,0,0.3);
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    top: 0px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: 100;
+    /*-webkit-border-radius: 12px;*/
+    /*-moz-border-radius: 12px;*/
+    /*border-radius: 12px;*/
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+  .close:hover { background: rgba(0,0,0,0.1); }
+  /* End Modal Styling */

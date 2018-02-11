@@ -8,6 +8,7 @@ class App extends Component {
   state = {
     data:[],
     loaded: false,
+    showModal: false,
   }
   componentDidMount() {
     // fetch('/users')
@@ -66,26 +67,51 @@ class App extends Component {
   updateCallback(callback){
     console.log('updateCallback',callback);
   }
+  toggleModal = () => {
+    console.log('toggleModal')
+    this.setState({
+      showModal: !this.state.showModal,
+    })
+  }
+  
+  getModal(){
+    return (
+      <div id="openModal" className="modalDialog">
+        <div>
+          <a href="#close" title="Close" className="close">X</a>
+          <h2>Node Navigator</h2>
+          <p>NodeNavigator is a d3.js visualization widget to help summarizing, browsing and navigating large data sets.</p>
+        </div>
+      </div>
+    );
+  }
   render() {
     return (
-       <div className="container">
-            <div className="header">
-                <div> <i className="far fa-compass"></i> </div>
-                <div>Node Navigator</div>
-                <div className="info"><i className="fas fa-info-circle"></i></div>
-            </div>
+        <div>
+        {
+                  !this.state.showModal?
+                  this.getModal()
+                  : ''
+        }
+           <div className="container">
+                <div className="header">
+                    <div> <i className="far fa-compass"></i> </div>
+                    <div>Node Navigator</div>
+                    <div className="info"> <a href="#openModal">  <i className="fas fa-info-circle" ></i> </a></div>
+                </div>
 
-            <Menu/>
-            
-            <Content 
-              setData={this.setData.bind(this)} 
-              loaded={this.state.loaded} 
-              data={this.state.data} 
-              updateCallback={this.updateCallback.bind(this)}
-              attributes={this.state.attributes}
-            />
-            
-            <div className="footer">Github Project MIT License <i className="fab fa-github"></i> </div>
+                <Menu/>
+                
+                <Content 
+                  setData={this.setData.bind(this)} 
+                  loaded={this.state.loaded} 
+                  data={this.state.data} 
+                  updateCallback={this.updateCallback.bind(this)}
+                  attributes={this.state.attributes}
+                />
+                
+                <div className="footer"> <a href="https://github.com/jgmurillo10/thesis" target="_blank" rel="noopener noreferrer"> Github Project MIT License <i className="fab fa-github"></i> </a> </div>
+            </div>
         </div>
     );
   }
