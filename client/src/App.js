@@ -15,40 +15,54 @@ class App extends Component {
     //   .then(res => res.json())
     //   .then(users => this.setState({users}))
   }
-  setData(data){
-    let atts = []
+  /*
+    Function that iterates over the data in order to get the type of each attribute
+    @params data is the dataset and atts is the array with the atributtes names and types
+    returns an array with the types of the attributes of the data
+    also gets the attributte that is id
+  */
+  getAttributesType(data,atts){
     let seq = "sequential";
     let cat = "categorical";
+    let count = 0;     
+    for(let prop in data[1]){
+      let attr =data[1][prop];
+      if(atts[count].name.includes("id") || atts[count].name.includes("key")){
+        atts[count].id = true;
+      }
+      let notNumber = isNaN(attr)
+      let isDate = this.isDate(attr);
+      console.log(attr,!notNumber,isDate);
+      if(!notNumber){
+        atts[count].type = seq;
+      }else if(isDate){
+        atts[count].type = seq;
+      }else {
+         atts[count].type = cat;
+      }
+      count++;
+    }
+  
+  }
+  isDate(attr){
+    var mydate = new Date(attr);
+    if(isNaN(mydate.getDate())){
+      return false;
+    }
+    return true;
+  }
+  setData(data){
+    /*Creates an empty array that will contain the metadata of the attributes*/
+    let atts = []
     for (let prop in data[0]){
       let i = {};
       i.name = prop;
       i.checked = true;
+      i.type = "";
+      i.id = false;
       atts.push(i);
     }
-    console.log(atts);
-    let count = 0;
-    /**
-    Array that loops over the element 1 of the data and guess the type of value of the attribute
-    **/
-    for (let prop in data[1]){
-      let attrib = data[1][prop]
-      if (typeof attrib === "string"){
-        let conversion = Number(attrib);
-        if (isNaN(conversion)){
-          atts[count].type = cat;
-          console.log('if',attrib,conversion,count);
-        }else{
-          console.log('else',attrib,conversion,count);
-          atts[count].type = seq;
-        }
-      }else {
-        console.log('outer else',attrib,count);
-        atts[count].type = seq;
-      }
-
-      count = count+1;
-    } 
-     console.log(atts)
+    this.getAttributesType(data,atts);
     this.setState({
       data: data,
       loaded: true,

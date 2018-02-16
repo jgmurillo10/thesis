@@ -11,7 +11,6 @@ class Load extends Component {
       this.getFileSize = this.getFileSize.bind(this);
     }
   onChange(e){
-    console.log(e);
     let fileName = e.target.value.split( '\\' ).pop()
     this.setState({
       fileName: fileName
