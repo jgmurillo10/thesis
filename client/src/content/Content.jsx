@@ -13,6 +13,7 @@ class Content extends Component {
 						data={this.props.data}
 						updateCallback={this.props.updateCallback}
 						attributes={this.props.attributes}
+						ids={this.props.ids}
 					/>
 				}
 

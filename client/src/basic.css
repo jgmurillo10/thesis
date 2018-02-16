@@ -10,7 +10,7 @@
 
 html, body {
   box-sizing: border-box;
-  background-color: #ffeead;
+  /*background-color: #ffeead;*/
   height: 100%;
   padding: 0px;
   margin: 0px;
@@ -24,7 +24,8 @@ a:link {
 }
 
 .container > div:nth-child(3n) {
-  background-color: #88d8b0;
+  font-size: 1em;
+  background-color: rgba(0,0,0,0.1);
 }
 
 .container > div:nth-child(2n) {

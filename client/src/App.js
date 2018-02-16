@@ -9,6 +9,7 @@ class App extends Component {
     data:[],
     loaded: false,
     showModal: false,
+    ids: [],
   }
   componentDidMount() {
     // fetch('/users')
@@ -21,7 +22,7 @@ class App extends Component {
     returns an array with the types of the attributes of the data
     also gets the attributte that is id
   */
-  getAttributesType(data,atts){
+  getAttributesType(data,atts,ids){
     let seq = "sequential";
     let cat = "categorical";
     let count = 0;     
@@ -29,6 +30,7 @@ class App extends Component {
       let attr =data[1][prop];
       if(atts[count].name.includes("id") || atts[count].name.includes("key")){
         atts[count].id = true;
+        ids.push(atts[count].name);
       }
       let notNumber = isNaN(attr)
       let isDate = this.isDate(attr);
@@ -54,6 +56,7 @@ class App extends Component {
   setData(data){
     /*Creates an empty array that will contain the metadata of the attributes*/
     let atts = []
+    let ids = []
     for (let prop in data[0]){
       let i = {};
       i.name = prop;
@@ -62,11 +65,12 @@ class App extends Component {
       i.id = false;
       atts.push(i);
     }
-    this.getAttributesType(data,atts);
+    this.getAttributesType(data,atts,ids);
     this.setState({
       data: data,
       loaded: true,
       attributes: atts,
+      ids: ids,
     })
   }
   setID(){
@@ -122,6 +126,7 @@ class App extends Component {
                   data={this.state.data} 
                   updateCallback={this.updateCallback.bind(this)}
                   attributes={this.state.attributes}
+                  ids={this.state.ids}
                 />
                 
                 <div className="footer"> <a href="https://github.com/jgmurillo10/thesis" target="_blank" rel="noopener noreferrer"> Github Project MIT License <i className="fab fa-github"></i> </a> </div>

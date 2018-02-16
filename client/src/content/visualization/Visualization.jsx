@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 import NodeNavigator from "./NodeNavigator.js";
 // let d3 = require("d3");
 const cat = "categorical";
+const seq = "sequential";
 class Visualization extends Component {
 
 
 	componentDidMount() {
     console.log("NodeNavigatorComponent did mount");
     this.nn = new NodeNavigator(this.target, 600)
-      .id(this.props.id)
+      .id(this.props.ids[0])
       .updateCallback(this.props.updateCallback);
       this.props.attributes.map((d,i)=>{
         if(d.checked)
@@ -18,11 +19,9 @@ class Visualization extends Component {
           if(d.type === cat){
             console.log('cat',d.name);
             this.nn.addCategoricalAttrib(d.name);
-          }if (d.name.includes( "Timestamp")||d.name.includes("date") ){
+          }else if(d.type === seq){
             console.log('seq',d.name);
             this.nn.addSequentialAttrib(d.name);
-          }else {
-          	this.nn.addCategoricalAttrib(d.name);
           }
 
       })
