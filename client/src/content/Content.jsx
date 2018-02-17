@@ -14,6 +14,7 @@ class Content extends Component {
 						updateCallback={this.props.updateCallback}
 						attributes={this.props.attributes}
 						ids={this.props.ids}
+						id={this.props.id}
 					/>
 				}
 

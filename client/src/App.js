@@ -9,7 +9,9 @@ class App extends Component {
     data:[],
     loaded: false,
     showModal: false,
+    attributes: [],
     ids: [],
+    id: false,
   }
   componentDidMount() {
     // fetch('/users')
@@ -34,7 +36,6 @@ class App extends Component {
       }
       let notNumber = isNaN(attr)
       let isDate = this.isDate(attr);
-      console.log(attr,!notNumber,isDate);
       if(!notNumber){
         atts[count].type = seq;
       }else if(isDate){
@@ -44,7 +45,13 @@ class App extends Component {
       }
       count++;
     }
-  
+    if(ids.length === 0){
+      this.createId(data,atts);
+    }
+  }
+  createId(data,atts){
+    let row = 1; //because row 0 is the attributes names
+
   }
   isDate(attr){
     var mydate = new Date(attr);
@@ -67,20 +74,22 @@ class App extends Component {
     }
     this.getAttributesType(data,atts,ids);
     this.setState({
-      data: data,
       loaded: true,
       attributes: atts,
       ids: ids,
+      data: data,
     })
   }
-  setID(){
+  setID(id){
     console.log('setID');
+    this.setState({id:id})
   }
   setFile(file){
     console.log('setFile');
   }
-  setAttribute(attrs){
+  setAttributes(attrs){
     console.log('setatts');
+    this.setState({attributes:attrs})
   }
   updateCallback(callback){
     console.log('updateCallback',callback);
@@ -99,6 +108,7 @@ class App extends Component {
           <a href="#close" title="Close" className="close">X</a>
           <h2>Node Navigator</h2>
           <p>NodeNavigator is a d3.js visualization widget to help summarizing, browsing and navigating large data sets.</p>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/Co074RJXzdk" frameBorder="0" allow="encrypted-media" allowFullScreen></iframe>
         </div>
       </div>
     );
@@ -118,7 +128,14 @@ class App extends Component {
                     <div className="info"> <a href="#openModal">  <i className="fas fa-info-circle" ></i> </a></div>
                 </div>
 
-                <Menu/>
+                <Menu
+
+                  attributes={this.state.attributes}
+                  ids={this.state.ids}
+                  setId={this.setID.bind(this)}
+                  setAttributes={this.setAttributes.bind(this)}
+
+                />
                 
                 <Content 
                   setData={this.setData.bind(this)} 
@@ -127,6 +144,7 @@ class App extends Component {
                   updateCallback={this.updateCallback.bind(this)}
                   attributes={this.state.attributes}
                   ids={this.state.ids}
+                  id={this.state.id}
                 />
                 
                 <div className="footer"> <a href="https://github.com/jgmurillo10/thesis" target="_blank" rel="noopener noreferrer"> Github Project MIT License <i className="fab fa-github"></i> </a> </div>

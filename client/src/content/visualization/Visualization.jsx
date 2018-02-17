@@ -10,11 +10,12 @@ class Visualization extends Component {
 	componentDidMount() {
     console.log("NodeNavigatorComponent did mount");
     this.nn = new NodeNavigator(this.target, 600)
-      .id(this.props.ids[0])
+      .id(this.props.id? this.props.id : this.props.ids[0])
       .updateCallback(this.props.updateCallback);
       this.props.attributes.map((d,i)=>{
         if(d.checked)
-        console.log(this.props.data[0]);
+       	console.log(this.props.data)
+        console.log("------------");
 
           if(d.type === cat){
             console.log('cat',d.name);
@@ -23,6 +24,8 @@ class Visualization extends Component {
             console.log('seq',d.name);
             this.nn.addSequentialAttrib(d.name);
           }
+
+         console.log("------------");
 
       })
 
