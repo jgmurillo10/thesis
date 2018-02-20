@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Switch, Button } from 'antd';
 
 class Menu extends Component {
+	onChange(checked) {
+	  console.log(`switch to ${checked}`);
+	}
 	clickAtt(i){
 		console.log(i,'i')
 		let attributes = this.props.attributes;
@@ -17,7 +21,9 @@ class Menu extends Component {
 					<div className="attributes-container">
 					{
 						this.props.ids.map((d,i)=>{
-							return (<button className="attribute" key={i}>{d}</button>)
+							return (
+								<Button className="attribute" key={i} type="dashed">{d}</Button>
+							)
 						})
 					}
 
@@ -26,10 +32,16 @@ class Menu extends Component {
 				</div>
 				<div className="attributes">
 					<p>Attributes</p>
-					<div className="attributes-container">
+					<div className="attributes-container-wrapper">
 					{
 						this.props.attributes.map((d,i)=>{
-							return (<button className="attribute" onClick={this.clickAtt.bind(this,i)} key={i}>{d.name}</button>)
+							return (
+								<div className="attributes-container">
+									<Button className="attribute" key={i} type="dashed">{d.name}</Button>
+									<Switch defaultChecked onChange={this.onChange.bind(this)} />
+									{/*<Switch defaultChecked onChange={this.onChange.bind(this)} />*/}
+								</div>
+								)
 						})
 					}
 					</div>

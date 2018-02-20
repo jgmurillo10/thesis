@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import './basic.css';
+import 'antd/dist/antd.css'; 
 import Menu from './menu/Menu.jsx';
 import Content from './content/Content.jsx';
 
 class App extends Component {
-  state = {
-    data:[],
-    loaded: false,
-    showModal: false,
-    attributes: [],
-    ids: [],
-    id: false,
+  constructor(props){
+    super(props);
+    this.state = {
+      data:[],
+      loaded: false,
+      showModal: false,
+      attributes: [],
+      ids: [],
+      id: false,
+    }
   }
   componentDidMount() {
     // fetch('/users')
@@ -24,6 +28,7 @@ class App extends Component {
     returns an array with the types of the attributes of the data
     also gets the attributte that is id
   */
+
   getAttributesType(data,atts,ids){
     let seq = "sequential";
     let cat = "categorical";
@@ -125,6 +130,7 @@ class App extends Component {
                 <div className="header">
                     <div> <i className="far fa-compass"></i> </div>
                     <div>Node Navigator</div>
+                    
                     <div className="info"> <a href="#openModal">  <i className="fas fa-info-circle" ></i> </a></div>
                 </div>
 
@@ -147,7 +153,10 @@ class App extends Component {
                   id={this.state.id}
                 />
                 
-                <div className="footer"> <a href="https://github.com/jgmurillo10/thesis" target="_blank" rel="noopener noreferrer"> Github Project MIT License <i className="fab fa-github"></i> </a> </div>
+                <div className="footer">
+
+                 <a href="https://github.com/jgmurillo10/thesis" target="_blank" rel="noopener noreferrer"> Github Project MIT License <i className="fab fa-github"></i> </a> 
+                </div>
             </div>
         </div>
     );

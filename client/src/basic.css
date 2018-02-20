@@ -48,15 +48,15 @@ a:link {
 
 
 }
-.container > .menu > .ids {
+/*.container > .menu >  .ids {
 
 }
-.container > .menu > .attributes {
+.container > .menu >  .attributes {
   align-self: center;
 }
 .container > .content > .visualization {
 
-}
+}*/
 #root > div > div.footer > svg {
   margin: 1em;
 }
@@ -126,19 +126,25 @@ a:link {
   .close:hover { background: rgba(0,0,0,0.1); }
   /* End Modal Styling */
 
-  .attributes-container {
- /*   display: flex;
-    flex-direction: column;*/
+  .attributes-container-wrapper {
+    display: grid;
+    grid-template-columns: auto;
   }
-  .attributes {
 
+  .attributes-container {
+    display: grid;
+    grid-template-columns: auto 20%;
+    margin: 0.2em;
   }
   .attribute {
-    /*text-align: left;*/
+    width: 100%;
+  }
+  /*.attribute {
+    text-align: left;
     background-color: #994636;
     margin-right: 1em;
     padding: 1em;
     color:white;
     width: 100%;
     border: none;
-  }
+  }*/
