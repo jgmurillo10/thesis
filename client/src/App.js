@@ -14,7 +14,7 @@ class App extends Component {
       showModal: false,
       attributes: [],
       ids: [],
-      id: false,
+      id: "",
     }
   }
   componentDidMount() {
@@ -150,7 +150,7 @@ class App extends Component {
                   updateCallback={this.updateCallback.bind(this)}
                   attributes={this.state.attributes}
                   ids={this.state.ids}
-                  id={this.state.id}
+                  id={this.state.ids[0]}
                 />
                 
                 <div className="footer">

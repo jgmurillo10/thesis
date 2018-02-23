@@ -777,7 +777,7 @@ function NodeNavigator(eleId, h) {
       // }
 
       drawLevelBorder(i);
-      drawLevelConnections(i);
+      drawLevelConnections(i); //se revienta en el tercer filtro
       // drawDimensionTitles(i);
 
 

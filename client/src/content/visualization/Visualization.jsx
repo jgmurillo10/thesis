@@ -6,14 +6,18 @@ const cat = "categorical";
 const seq = "sequential";
 class Visualization extends Component {
 
-
+ componentWillUpdate(newProps) {
+    console.log("NodeNavigatorComponent will update data.length=" + newProps.data.length);
+    if (newProps.data.length !== this.props.data.length)
+      this.nn.data(newProps.data);
+  }
 	componentDidMount() {
     console.log("NodeNavigatorComponent did mount");
     this.nn = new NodeNavigator(this.target, 600)
-      .id(this.props.id? this.props.id : this.props.ids[0])
+      .id(this.props.id)
       .updateCallback(this.props.updateCallback);
       this.props.attributes.map((d,i)=>{
-        if(d.checked)
+        if(d.checked){
        	console.log(this.props.data)
         console.log("------------");
 
@@ -26,7 +30,7 @@ class Visualization extends Component {
           }
 
          console.log("------------");
-
+       }
       })
 
     if (this.props.data) {

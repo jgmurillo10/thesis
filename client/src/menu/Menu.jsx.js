@@ -36,8 +36,8 @@ class Menu extends Component {
 					{
 						this.props.attributes.map((d,i)=>{
 							return (
-								<div className="attributes-container">
-									<Button className="attribute" key={i} >{d.name}</Button>
+								<div key={i} className="attributes-container">
+									<Button className="attribute"  >{d.name}</Button>
 									<Switch className="attribute" defaultChecked onChange={this.onChange.bind(this)} />
 									{/*<Switch defaultChecked onChange={this.onChange.bind(this)} />*/}
 								</div>
