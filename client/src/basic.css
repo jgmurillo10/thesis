@@ -137,7 +137,9 @@ a:link {
     margin: 0.2em;
   }
   .attribute {
-    width: 100%;
+    /*width: 100%;*/
+    align-self: center;
+    margin: 0.3em;
   }
   /*.attribute {
     text-align: left;

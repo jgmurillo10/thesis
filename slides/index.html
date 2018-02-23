@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RevealVizScroll demo</title>
+    <title>Data-explorer</title>
     <link rel="stylesheet" href="css/reveal.css">
     <link rel="stylesheet" href="css/theme/white.css">
     <link rel="stylesheet" href="css/revealVizScroll.css">
     <meta charset="utf-8">
-    <meta name="author" content="John Alexis Guerra Gomez">
-    <meta name="description" content="RevealVizScroll demo">
+    <meta name="author" content="Juan Guillermo Murillo Castillo">
+    <meta name="description" content="Thesis slides">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <style>
       .reveal pre {
@@ -21,22 +21,62 @@
       <div class="slides">
         <div class="scrollable scrollable-demo"></div>
         <section>
-          <h1>RevealVizScroll demo</h1>
-          <p>Create scrolliteling viz effects from Reveal</p><a href="https://github.com/john-guerra/revealVizScrollyteling">revealVizScroll repo</a>
+          <h1>Data-Explorer</h1>
+          <p>Juan Guillermo Murillo Castillo</p><a href="https://github.com/jgmurillo10/thesis">Online repo</a>
         </section>
         <section>
           <section>
-            <h3>Have you ever wanted to created incremental visualizations in Reveal?</h3>
+            <h3>Have you ever wondered how people visualize large amount of data?</h3>
           </section>
-          <section scrollable="demo" step="left" class="scroll">
+          <section>
+            <h3>It is easy, but first...</h3>
+            <img src="media/selfie.gif" alt="Mr. Bean's selfie">
+          </section>
+          <section>
+            <h3>Glossary</h3>
+            <ul>
+              <li>Dataset</li>
+              <li>Dimension</li>
+              <li>Visual Analytics</li>
+              <li>Widget</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Dataset</h4>
+            <img src="media/dataset-csv.png" height="400" alt="">
+            <img src="media/dataset-json.png" height="400" alt="">
+          </section>
+          <section>
+            <h4>Dimension</h4>
+            <ul>
+              <li>People</li>
+              <li>Products</li>
+              <li>Place</li>
+              <li>Time</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Visual Analytics</h4>
+            <img src="https://raw.githubusercontent.com/jgmurillo10/project_visual/master/demo.gif" alt="">
+          </section>
+          <section>
+            <h4>Visual Analytics</h4>
+            <img src="https://camo.githubusercontent.com/45ffedb8d57cd6851a98d8ce3ac856d7b4b13038/687474703a2f2f6a6f686e6775657272612e636f2f76697a2f656c696d696e61746f7269614d756e6469616c2f73637265656e73686f74732f73637265656e73686f74312e706e67" height="500" alt="">
+          </section>
+          <section>
+            <h4>Widget</h4>
+            <img src="https://raw.githubusercontent.com/john-guerra/NodeNavigator/master/src/example.png" height="500" alt="">
+          </section>
+
+         <!--  <section scrollable="demo" step="left" class="scroll">
             <h2>It's easy</h2>
             <p>Create a scroller with init, stepping and stop functions</p>
             <pre><code data-trim data-noescape>revealVizScroll.makeScrollable("demo",
-  initFn,
-  stepFn,
-  stopFn);
+              initFn,
+              stepFn,
+              stopFn);
 
-</code></pre>
+            </code></pre>
           </section>
           <section scrollable="demo" step="middle" class="scroll">
             <p>Then add a <strong>scroll</strong> class to your sections with two parameters</p>
@@ -54,7 +94,66 @@
           <section>
             <h2>End</h2>
             <p>This slide doesn't have the <strong>scroll</strong> class, therefore it hides the scroller</p>
+          </section> -->
+        </section>
+        <section>
+          <section>
+            <h3>What?</h3>  
+            <p>The task of visualizing large multi-dimensional datasets is not trivial</p>
+            <ul>
+              <li>Requires visualization design expertise</li>
+              <li>Dimensions</li>
+              <li>Rows</li>
+              <li>Basic knowledge about programming, data processing and web development</li>
+            </ul>
+            <!-- context -->
           </section>
+          
+        </section>
+        <section>
+          <section>
+            <h3>Why?</h3> 
+             <img src="https://media.giphy.com/media/m5VE3ahXujXAQ/giphy.gif" alt="Mr. Bean's selfie">
+             <br>
+             <!-- <img src="https://media.giphy.com/media/JCiEBGECVQ4A8/giphy.gif" alt="Mr. Bean's selfie"> -->
+             <img src="https://media.giphy.com/media/dQFE1MUgJcC88/giphy.gif" alt="Mr. Bean's selfie">
+            
+            <!-- state of the art -->
+          </section>
+          <section>
+            <h3>Related work</h3>
+          </section>
+          <section>
+            <h4>Visualization </h4>
+            <ul>
+              <li>Pixel Bar Chart</li>
+              <li>Value Bars</li>
+              <li>Parallel Coordinates</li>
+              <li>Generalized Spirals</li>
+              <li>Node Navigator</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Visualization Tool</h4>
+            <ul>
+              <li>Polaris</li>
+              <li>Voyager</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>How?</h3>  
+            <img src="media/demo-data3.png" alt="">
+            <!-- solution -->
+          </section>
+          
+        </section>
+        <section>
+          <section>
+            <h3>Data-explorer</h3>  
+          </section>
+          
         </section>
       </div>
     </div>

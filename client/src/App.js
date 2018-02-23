@@ -111,7 +111,7 @@ class App extends Component {
       <div id="openModal" className="modalDialog">
         <div>
           <a href="#close" title="Close" className="close">X</a>
-          <h2>Node Navigator</h2>
+          <h2>Data Navigator</h2>
           <p>NodeNavigator is a d3.js visualization widget to help summarizing, browsing and navigating large data sets.</p>
           <iframe width="100%" height="315" src="https://www.youtube.com/embed/Co074RJXzdk" frameBorder="0" allow="encrypted-media" allowFullScreen></iframe>
         </div>
@@ -129,7 +129,7 @@ class App extends Component {
            <div className="container">
                 <div className="header">
                     <div> <i className="far fa-compass"></i> </div>
-                    <div>Node Navigator</div>
+                    <div>Data Navigator</div>
                     
                     <div className="info"> <a href="#openModal">  <i className="fas fa-info-circle" ></i> </a></div>
                 </div>
