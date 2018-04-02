@@ -3,7 +3,7 @@
   <head>
     <title>Data-explorer</title>
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/white.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
     <link rel="stylesheet" href="css/revealVizScroll.css">
     <meta charset="utf-8">
     <meta name="author" content="Juan Guillermo Murillo Castillo">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <style>
       .reveal pre {
-        font-size:0.3em;
+        font-size: 0.3em;
       }
       .reveal {
           font-family: 'Helvetica Neue', sans-serif;
@@ -27,15 +27,20 @@
       <div class="slides">
         <div class="scrollable scrollable-demo"></div>
         <section>
-          <h1>Data-Explorer</h1>
-          <p>Juan Guillermo Murillo Castillo</p><a href="https://github.com/jgmurillo10/thesis">Online repo</a>
+          <h1>Navio</h1>
+          <p>John Alexis Guerra-Gomez</p>
+          <p>Juan Camilo Ortiz-Roman</p>
+          <p>Juan Guillermo Murillo-Castillo</p>
+          <a href="https://john-guerra.github.io/Navio/">Online repo</a>
+          <br>
+          <a href="https://john-guerra.github.io/momaExplorer/">Demo</a>
         </section>
-        <section>
+        <!-- <section>
           <section>
             <h2>Visualization</h2>
             <p>Computer-based visualization systems provide visual representations of datasets designed to help people carry out tasks more effectively.</p>
           </section>
-        </section>
+        </section> -->
         <section>
           <section>
             <h2> Do you think visualizing data is important?</h2>  
@@ -52,11 +57,11 @@
         </section>
         <section>
           <section>
-            <h3>Have you ever wondered how people visualize large amount of data?</h3>
+            <h3>Have you ever wondered how people visualize and explore large amount of data?</h3>
           </section>
           <section>
             <h3>It is easy, but first...</h3>
-            <img src="media/selfie.gif" alt="Mr. Bean's selfie">
+            <img class="plain" src="media/selfie.gif" alt="Mr. Bean's selfie">
           </section>
           <section>
             <h3>Glossary</h3>
@@ -125,13 +130,8 @@
         <section>
           <section>
             <h3>What?</h3>  
-            <p>The task of visualizing large multi-dimensional datasets is not trivial</p>
-            <ul>
-              <li>Requires visualization design expertise</li>
-              <li>Dimensions</li>
-              <li>Rows</li>
-              <li>Basic knowledge about programming, data processing and web development</li>
-            </ul>
+            <p>The tasks of visualizing and exploring large multi-dimensional datasets are not trivial</p>
+            
             <!-- context -->
           </section>
           
@@ -139,12 +139,57 @@
         <section>
           <section>
             <h3>Why?</h3> 
+            <ul>
+              <li>Require visualization design expertise</li>
+              <li>Number of dimensions</li>
+              <li>Number of rows</li>
+              <li>Basic knowledge about programming and data processing</li>
+            </ul>
              <img class="plain" src="https://media.giphy.com/media/m5VE3ahXujXAQ/giphy.gif" alt="Mr. Bean's selfie">
              <br>
              <!-- <img class="plain" src="https://media.giphy.com/media/JCiEBGECVQ4A8/giphy.gif" alt="Mr. Bean's selfie"> -->
-             <img class="plain" src="https://media.giphy.com/media/dQFE1MUgJcC88/giphy.gif" alt="Mr. Bean's selfie">
+             <!-- <img class="plain" src="https://media.giphy.com/media/dQFE1MUgJcC88/giphy.gif" alt="Mr. Bean's selfie"> -->
             
             <!-- state of the art -->
+          </section>
+          
+
+         <!--  <section>
+            <h4>Visualization Tool</h4>
+            <ul>
+              <li>Polaris</li>
+              <li>Voyager</li>
+            </ul>
+          </section>
+          <section>
+            <h4>Polaris (Tableau)</h4>
+            <img src="media/tableau.png" alt="">
+          </section>
+          <section>
+            <h4>Voyager</h4>
+            <img src="media/polaris.png" alt="">
+
+          </section> -->
+
+        </section>
+        <section>
+          <section>
+            <h3>How?</h3>  
+            
+            <!-- solution -->
+            <p>Interactive visualization widget that supports: </p>
+            
+            <ul>
+              <li>Summarizing</li>
+              <li>Navigating</li>
+              <li>Exploring</li>
+            </ul>
+          </section>
+          <section>
+            <p>Navio</p>
+            <a href="https://john-guerra.github.io/momaExplorer/" target="_blank" title="">
+              <img class="plain" src="media/navio-moma.png" alt="Navio exploring MoMA Collection">
+            </a>
           </section>
           <section>
             <h3>Related work</h3>
@@ -156,7 +201,7 @@
               <li>Value Bars</li>
               <li>Parallel Coordinates</li>
               <li>Generalized Spirals</li>
-              <li>Node Navigator</li>
+              <!-- <li>Node Navigator</li> -->
             </ul>
           </section>
           <section>
@@ -178,45 +223,41 @@
               <li>[2]: Value Bars</li>
               <li>[3]: Parallel Coordinates.</li>
               <li>[4]: Generalized Spirals </li>
-              <li>[5]: Node Navigator</li>
+              <li>[5]: Navio</li>
  
             </ul>
           </section>
-
-          <section>
-            <h4>Visualization Tool</h4>
-            <ul>
-              <li>Polaris</li>
-              <li>Voyager</li>
-            </ul>
-          </section>
-          <section>
-            <h4>Polaris (Tableau)</h4>
-            <img src="media/tableau.png" alt="">
-          </section>
-          <section>
-            <h4>Voyager</h4>
-            <img src="media/polaris.png" alt="">
-
-          </section>
-
+          
         </section>
         <section>
           <section>
-            <h3>How?</h3>  
-            
-            <!-- solution -->
-            <p>Visualization tool </p>
+            <h2>Navio-Shipyard</h2>
+            <p>Web application that allows the user:</p>
+              <ul>
+                <li>upload</li>
+                <li>preprocess</li>
+                <li>explore</li>
+                <li>summarize</li>
+                <li>visualize</li>
+              </ul>
+            <p>
+            </p>  
+          </section>
+          <section>
+            <h3>Features</h3>
             <ul>
-              <li>Web Application</li>
-              <li>No programming needed</li>
-              <li>Export visualization</li>
-              <li>Export the sub-dataset</li>
-              <li>plug-n-play</li>
+              <li>Drag and drop</li>
+              <li>Supports tsv, csv and txt files</li>
+              <li>Set up Navio</li>
+              <li>Preview of the filtered data in a table</li>
+              <li>Export filtered data (csv)</li>
+              <li>Export embedded visualization</li>
             </ul>
           </section>
           <section>
-            <img class="plain" src="media/demo-data3.png" alt="">
+            <a href="https://john-guerra.github.io/Navio/shipyard/build/" title="">
+              <img class="plain" src="media/navio-shipyard.png" alt="">
+            </a>
           </section>
           
         </section>
@@ -291,6 +332,8 @@
     </script>
     <script>
       Reveal.initialize({
+        history: true,
+        transition: "convex",
         dependencies: [
           { src : "js/revealVizScroll.js",
             async: false,
